@@ -1,0 +1,14 @@
+tolerance 2.0
+filetype xyz
+output liquid.xyz
+
+structure water.xyz 
+  number 100 
+  #                +2 on height
+  #                -2 on width
+  # slab slab = 13.76980
+  # Xz = 2.294967320028762 (lattice spacing, oddly)
+  # slab + Xz = 16.06476732002876
+  # add another 2 and Xz to get the lattice constant
+  inside box 0. 0. 16.06476732002876 9.242998 7.7367217 41.39263432002876
+end structure

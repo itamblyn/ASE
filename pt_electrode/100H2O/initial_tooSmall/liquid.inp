@@ -1,0 +1,10 @@
+tolerance 2.0
+filetype xyz
+output liquid.xyz
+
+structure water.xyz 
+  number 100 
+  #                +2 on height
+  #                -2 on width
+  inside box 0. 0. 15.76980 9.242998 7.7367217 39.097667
+end structure
