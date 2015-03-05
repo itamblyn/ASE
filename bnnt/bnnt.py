@@ -6,10 +6,13 @@ from ase import Atoms
 from ase.structure import nanotube
 from ase.visualize import view
 
-BCN = False
+BCN = True 
 BN = False 
 cbond = 1.4606961810497532
 lxoverride = 25.
+
+n_inner, m_inner = 6,6
+n_outer, m_outer = 10,10
 
 
 def convert_BCN(tube):
@@ -31,7 +34,7 @@ def convert_BN(tube):
         i+=2
     return tube
 
-tube = nanotube(6, 6, length=6, bond=cbond, symbol='C')
+tube = nanotube(n_inner, m_inner, length=6, bond=cbond, symbol='C')
 lx, ly, lz = tube.get_cell()[0][0], tube.get_cell()[1][1], tube.get_cell()[2][2]
 
 print 'Set lx and ly to ', lxoverride
@@ -45,7 +48,7 @@ tube.center()
 
 io.write('POSCAR.1', tube, sort=True)
 
-tube2 = nanotube(11, 11, length=6, bond=cbond, symbol='C')
+tube2 = nanotube(n_outer, m_outer, length=6, bond=cbond, symbol='C')
 
 lx, ly, lz = tube2.get_cell()[0][0], tube2.get_cell()[1][1], tube2.get_cell()[2][2]
 print 'Set lx and ly to ', lxoverride

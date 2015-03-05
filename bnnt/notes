@@ -1,0 +1,1 @@
+It is better to cat POSCAR.1 and POSCAR.2 than to "join them" using ASE. That way the inner and outer tube are listed separately
